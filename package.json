@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "./node_modules/.bin/netlif-lambda serve index.js",
+    "build": "./node_modules/.bin/netlif-lambda build index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,11 @@
     "express": "^4.17.1",
     "google-spreadsheet": "^3.0.11",
     "googleapis": "^39.2.0",
+    "netlify-lambda": "^1.6.3",
     "open": "^7.0.4",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "server-destroy": "^1.0.1"
+    "server-destroy": "^1.0.1",
+    "serverless-http": "^2.5.0"
   }
 }
