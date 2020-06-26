@@ -15,7 +15,7 @@ const giving = require("./utils/FFBK_DB_Giving");
 const creds = require("../credentials");
 const { ffbk_database_giving, ffbk_db, ffbk_budget } = process.env;
 
-router.get("/status/percentages", async (req, res, next) => {
+router.get("/api/giving/status/percentages", async (req, res, next) => {
   /* 
     for github reference to google-spreadsheet pkg: 
     visit https://github.com/theoephraim/node-google-spreadsheet 
@@ -35,7 +35,7 @@ router.get("/status/percentages", async (req, res, next) => {
   );
 });
 
-router.get("/involvement/percentages", async (req, res) => {
+router.get("/api/giving/involvement/percentages", async (req, res) => {
   let auth = await getGoogleClient();
   let involvement = sheets.spreadsheets.values.get(
     constructParams(auth, ffbk_database_giving, `Dashboard!A15:I19`),
@@ -51,7 +51,7 @@ router.get("/involvement/percentages", async (req, res) => {
   );
 });
 
-router.get("/:range/search?", async (req, res, next) => {
+router.get("/api/giving/:range/search?", async (req, res, next) => {
   let { range } = req.params;
   let { sheet } = req.query;
   console.log(range, sheet);

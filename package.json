@@ -2,10 +2,10 @@
   "name": "ffbk-data-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions/index.js",
   "scripts": {
-    "start": "./node_modules/.bin/netlif-lambda serve index.js",
-    "build": "./node_modules/.bin/netlif-lambda build index.js"
+    "build": "netlify-lambda build server",
+    "start": "nodemon server-local.js"
   },
   "keywords": [],
   "author": "",

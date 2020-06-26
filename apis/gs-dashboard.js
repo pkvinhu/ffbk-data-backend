@@ -14,7 +14,7 @@ const dash = require("./utils/FFBK_Dashboard");
 const creds = require("../credentials");
 const { ffbk_db, ffbk_budget, dashboard } = process.env;
 
-router.get('/monthly-giving', async (req, res) => {
+router.get('/api/dashboard/monthly-giving', async (req, res) => {
     let auth = await getGoogleClient();
   let involvement = sheets.spreadsheets.values.get(
     constructParams(auth, dashboard, `Monthly Giving!G1:M500`),
@@ -30,7 +30,7 @@ router.get('/monthly-giving', async (req, res) => {
   );
 })
 
-router.get('/budget-chart', async (req, res) => {
+router.get('/api/dashboard/budget-chart', async (req, res) => {
   let auth = await getGoogleClient();
 let involvement = sheets.spreadsheets.values.get(
   constructParams(auth, dashboard, `Budget Charts!A2:H26`),
@@ -46,7 +46,7 @@ let involvement = sheets.spreadsheets.values.get(
 );
 })
 
-router.get('/budget-breakdown', async (req, res) => {
+router.get('/api/dashboard/budget-breakdown', async (req, res) => {
   let auth = await getGoogleClient();
 let involvement = sheets.spreadsheets.values.get(
   constructParams(auth, dashboard, `Budget Data!A1:E`),
@@ -62,7 +62,7 @@ let involvement = sheets.spreadsheets.values.get(
 );
 })
 
-router.get('/giving-forecast', async (req, res) => {
+router.get('/api/dashboard/giving-forecast', async (req, res) => {
   let auth = await getGoogleClient();
 let involvement = sheets.spreadsheets.values.get(
   constructParams(auth, dashboard, `Budget Data!K1:P13`),
