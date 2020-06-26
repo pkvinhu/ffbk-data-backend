@@ -9,8 +9,8 @@ const { givingRouter, dashboardRouter } = require('./apis');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/.netlify/api/giving', givingRouter);
-app.use('/.netlify/api/dashboard', dashboardRouter)
+app.use('/.netlify/functions/api/giving', givingRouter);
+app.use('/.netlify/functions/api/dashboard', dashboardRouter)
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}!`)
