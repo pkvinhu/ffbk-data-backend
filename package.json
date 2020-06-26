@@ -4,8 +4,7 @@
   "description": "",
   "main": "functions/index.js",
   "scripts": {
-    "build": "netlify-lambda build server",
-    "start": "nodemon server-local.js"
+    "start": "node server-local.js"
   },
   "keywords": [],
   "author": "",
