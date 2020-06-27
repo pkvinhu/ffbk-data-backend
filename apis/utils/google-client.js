@@ -3,11 +3,11 @@ let { GoogleSpreadsheet } = require("google-spreadsheet");
 let client_secret;
 let client_id;
 let redirect_uri;
-if(process.env.ENV == "dev") {
+if(process.env.ENV == "prod") {
   client_secret = process.env.client_secret
   client_id = process.env.client_id2
   redirect_uri = process.env.redirect_uri
-} else if(process.env.ENV == "prod") {
+} else if(process.env.ENV == "dev") {
   const c = require('../../gs-credentials');
   client_secret = c.client_secret
   client_id = c.client_id
