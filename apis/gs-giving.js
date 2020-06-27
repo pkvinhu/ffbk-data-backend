@@ -4,15 +4,12 @@ const express = require("express");
 const router = express.Router();
 const { google } = require("googleapis");
 const sheets = google.sheets("v4");
-const rp = require("request-promise");
-let { GoogleSpreadsheet } = require("google-spreadsheet");
 
 /* HELPERS */
 const { getGoogleClient, constructParams } = require("./utils/google-client");
 const giving = require("./utils/FFBK_DB_Giving");
 
 /* CREDENTIALS */
-const creds = require("../credentials");
 const { ffbk_database_giving, ffbk_db, ffbk_budget } = process.env;
 
 router.get("/api/giving/status/percentages", async (req, res, next) => {
