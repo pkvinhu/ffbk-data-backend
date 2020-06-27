@@ -32,9 +32,6 @@ if(process.env.ENV == "dev") {
 };
 
 let getGoogleClient = async () => {
-  console.log(process.env.ENV)
-  console.log(creds)
-  console.log(require('../../credentials'));
   var doc = new GoogleSpreadsheet();
 
   await doc.useServiceAccountAuth(creds);
