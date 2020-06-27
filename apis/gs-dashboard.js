@@ -3,15 +3,12 @@ const express = require("express");
 const router = express.Router();
 const { google } = require("googleapis");
 const sheets = google.sheets("v4");
-const rp = require("request-promise");
-let { GoogleSpreadsheet } = require("google-spreadsheet");
 
 /* HELPERS */
 const { getGoogleClient, constructParams } = require("./utils/google-client");
 const dash = require("./utils/FFBK_Dashboard");
 
 /* CREDENTIALS */
-const creds = require("../credentials");
 const { ffbk_db, ffbk_budget, dashboard } = process.env;
 
 router.get('/api/dashboard/monthly-giving', async (req, res) => {
