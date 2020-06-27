@@ -26,7 +26,10 @@ const credsFromEnv = {
   auth_provider_x509_cert_url: process.env.auth_provider_x509_cert_url,
   client_x509_cert_url: process.env.client_x509_cert_url
 };
-const creds = process.env.ENV == "dev" ? require("../../credentials") : credsFromEnv;
+let creds = credsFromEnv;
+if(process.env.ENV == "dev") {
+  creds = require("../../credentials");
+};
 
 let getGoogleClient = async () => {
   console.log(process.env.ENV)
